@@ -46,7 +46,7 @@ class W3_AdminEnvironment {
         // call plugin-related handlers
         foreach ($this->get_handlers($config) as $h) {
             try {
-                $h->fix_on_event($config, $event);
+                $h->fix_on_event($config, $event, $old_config);
             } catch (SelfTestExceptions $ex) {
                 $exs->push($ex);
             }
